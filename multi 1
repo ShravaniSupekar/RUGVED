@@ -30,17 +30,16 @@ def gradientDescent(X,y,theta,iters,alpha):
     return theta,cost
 
 #set hyper parameters
-alpha = 0.01
+alpha = 0.001
 iters = 1000
 
 g,cost = gradientDescent(X,y,theta,iters,alpha)
 print(g)
 
 finalCost = computeCost(X,y,g)
-print(finalCost)
+print('Final Cost = ',finalCost)
 
 fig, ax = plt.subplots()  
 ax.plot(np.arange(iters), cost, 'r')  
 ax.set_xlabel('Iterations')  
 ax.set_ylabel('Cost')  
-ax.set_title('Error vs. Training Epoch')  
